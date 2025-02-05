@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Headcanon Generator</title>
+    <style>
+        body {
+            background-color: #d0f4c6; /* Soft light green for the page background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f1f8e9; /* Light yellow-green container */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: #388e3c; /* Dark green for title */
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 400;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            font-size: 18px;
+            padding: 12px 20px;
+            width: 70%;
+            margin: 20px 0;
+            border: 2px solid #388e3c; /* Matching dark green border */
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #4caf50;
+            outline: none;
+        }
+        button {
+            font-size: 18px;
+            padding: 12px 30px;
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #4caf50;
+        }
+        button:active {
+            background-color: #2e7d32;
+        }
+        .result {
+            font-size: 20px;
+            font-weight: 500;
+            color: #333;
+            margin-top: 30px;
+            word-wrap: break-word;
+        }
+        .result span {
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Character Headcanon Generator</h1>
+        <h2>Version by Shan</h2>
+        
+        <input type="text" id="userInput" placeholder="Enter a name or character...">
+        <br>
+        <button onclick="generateHeadcanon()">Generate</button>
+        
+        <p class="result" id="result"></p>
+    </div>
+
+    <script>
+        const headcanons = [
+            "is secretly a superhero.",
+            "loves pineapple pizza.",
+            "has an infinite supply of cookies.",
+            "can talk to animals.",
+            "was a famous pirate in a past life.",
+            "can predict the weather perfectly.",
+            "is an expert in disguise.",
+            "owns a magical pet.",
+            "has a secret base under their house.",
+            "can't cook to save their life.",
+            "is terrified of clowns.",
+            "sleeps with a nightlight.",
+            "is secretly a cat person but pretends to be a dog person.",
+            "is allergic to chocolate.",
+            "has a crush on their best friend but doesn't know how to tell them.",
+            "has a mysterious past they never talk about.",
+            "is a terrible dancer but tries anyway.",
+            "thinks they can speak fluent French but actually can't.",
+            "always forgets important dates like birthdays and anniversaries.",
+            "has a pet rock they treat like royalty.",
+            "is a ASTRO'S #1 FAN!!!",
+            "is a hopeless romantic.",
+            "is a master of dad jokes.",
+            "is a secret agent.",
+            "is a vampire.",
+            "is a werewolf.",
+            "is a witch.",
+            "is a diddy",
+            "is a pedofile",
+            "IS A PEDOFILE AND GAY!!!"
+        ];
+
+        function generateHeadcanon() {
+            const userInput = document.getElementById('userInput').value.trim();
+            const resultElement = document.getElementById('result');
+            
+            if (userInput) {
+                const randomHeadcanon = headcanons[Math.floor(Math.random() * headcanons.length)];
+                resultElement.textContent = `${userInput} ${randomHeadcanon}`;
+            } else {
+                resultElement.textContent = "Please enter something first!";
+            }
+        }
+    </script>
+</body>
+</html>
